@@ -1,0 +1,21 @@
+def parselist(alist, indices):
+    return [alist[i:j] for i, j in zip([0]+indices, indices+[None])]
+
+s1 = input()
+length, cases = s1.split()
+cases = int(cases)
+
+s2 = input()
+width = [int(x) for x in s2.split()]
+
+p = 0
+while p < cases:
+    s3 = input()
+    i,j = s3.split()
+    i = int(i)
+    j = int(j) + 1
+    k = [i,j]
+    splits = parselist(width,k)
+    small = min(splits[1])
+    print(small)
+    p = p + 1

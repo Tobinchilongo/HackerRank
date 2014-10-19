@@ -1,0 +1,25 @@
+case = int(input())
+
+t = 0
+while t < case:
+    word = input()
+    length = len(word)
+    out = []
+    add = 0
+    for letter in word:
+        ordinal = ord(letter) - 96
+        out.append(ordinal)
+    if ((length % 2) == 0) == True:
+        x = 0
+        while x < (length/2):
+            n = abs(int(out[length - 1 - x]) - out[x])
+            add = add + n
+            x = x + 1
+    else:
+        x = 0
+        while x < (len(word)/2 - 0.5):
+            n = abs(int(out[length - 1 - x]) - out[x])
+            add = add + n
+            x = x + 1
+    print(add)
+    t = t + 1
